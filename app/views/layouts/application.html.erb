@@ -32,13 +32,23 @@
                </li>
                
                <li class="nav-item">
-                 <%=link_to user_path(current_user.id), class: 'nav-link text-lite' do %>
-                    <i class="fa-solid fa-users"></i>Users
+                 <%= link_to "Users", user_path(current_user.id), class: 'nav-link text-lite' do %>
+                    <i class="fa-solid fa-users"></i>
                   <% end %>
                </li>
                
                <li class="nav-item">
+                 <%= link_to "Books", book_path, class: 'nav-link text-lite' do %>
+                  <i class="fa-solid fa-book-open"></i>
+                  <% end %>
                </li>
+               
+               <li class="nav-item">
+                 <% link_to "Log out", root_path, lass: 'nav-link text-lite' do %>
+                  <i class="fa-solid fa-right-from-bracket"></i>
+                  <% end %>
+                </li>
+                
                <% end %>
             </ul>
           </div>
