@@ -2,9 +2,9 @@
 <html>
   <head>
     <title>Bookers2</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/f9b17be825.js" crossorigin="anonymous"></script>
@@ -26,30 +26,54 @@
               <% if user_signed_in? %>
               
                <li class="nav-item">
-                 <%= link_to "Home", root_path, class: 'nav-link text-lite' do %>
-                    <i class="fa-solid fa-house"></i>
+                 <%= link_to root_path, class: 'nav-link text-lite' do %>
+                    <i class="fa-solid fa-house"></i>Home
                <% end %>
                </li>
                
                <li class="nav-item">
-                 <%= link_to "Users", user_path(current_user.id), class: 'nav-link text-lite' do %>
-                    <i class="fa-solid fa-users"></i>
+                 <%= link_to user_path(current_user.id), class: 'nav-link text-lite' do %>
+                    <i class="fa-solid fa-users"></i>Users
                   <% end %>
                </li>
                
                <li class="nav-item">
-                 <%= link_to "Books", book_path, class: 'nav-link text-lite' do %>
-                  <i class="fa-solid fa-book-open"></i>
+                 <%= link_to book_path, class: 'nav-link text-lite' do %>
+                  <i class="fa-solid fa-book-open"></i>Books
                   <% end %>
                </li>
                
                <li class="nav-item">
-                 <% link_to "Log out", root_path, lass: 'nav-link text-lite' do %>
-                  <i class="fa-solid fa-right-from-bracket"></i>
+                 <%= link_to root_path, class: 'nav-link text-lite' do %>
+                  <i class="fa-solid fa-right-from-bracket"></i>Log out
                   <% end %>
+                 </li>
+               <% else %>
+               
+               <li class="nav-item">
+                 <%= link_to root_path, class: 'nav-link text-lite' do %>
+                    <i class="fa-solid fa-house"></i>Home
+               <% end %>
+               </li>
+               
+               <li class="nav-item">
+                 <%= link_to about_path, class: 'nav-link text-lite' do %>
+                    <i class="fa-solid fa-link"></i>About
+               　 <% end %>
                 </li>
                 
-               <% end %>
+                <li class="nav-item">
+                  <%= link_to new_user_registration_path, class: 'nav-link text-lite' do %>
+                    <i class="fa-solid fa-user-plus"></i>Sign up
+                  </li>
+                  <% end %>
+                  
+                <li class="nav-item">
+                  <%= link_to user_session_path, class: 'nav-link text-lite' do %>
+                    <i class="fa-solid fa-right-to-bracket"></i>Log in
+                  </li>
+                 <% end %>
+              <% end %>
             </ul>
           </div>
         </div>
