@@ -11,7 +11,7 @@
   </thead>
   
   <tbody>
-    <% @books each do |book| %>
+    <% @books.each do |book| %>
     <tr>写真のtag
       <td>
         <%= link_to book.title, book_path(@book.id) %>
@@ -20,4 +20,5 @@
         <%= book.body %>
       </td>
     </tr>
+    <% end %>
   </tbody>

@@ -1,2 +1,23 @@
 部分テンプレート
 
+<h1>Books</h1>
+    <div class="col-lg-8">
+         <table class="table table-striped">
+         <thead>
+         <tr>
+          <th>Title</th>
+          <th>Opinion</th>
+          <th colspan="2"></th>
+         </tr>
+        <tbody>
+        <% @user.each do |user| %>
+          <tr>
+            <td><%= image_tag user.image.get_image %></td>
+            <td><%= link_to books_path(@book.id), user.title %></td>
+            <td><%= user.body %></td>
+         </tr>
+        <% end %>
+        </tbody>
+    </thead>
+ </table>
+</div>

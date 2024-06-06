@@ -8,11 +8,11 @@ class BooksController < ApplicationController
     @book.user_id=current_user.id
     @book.user_name=current_user.name
     @book.save
-    redirect_to book_path
+    redirect_to books_path
   end
 
   def index
-    @book=Book.all
+    @books=Book.all
     
   end
 
@@ -21,6 +21,7 @@ class BooksController < ApplicationController
   end
 
   def edit
+    @book=Bool.find(params[:id])
   end
   
   private
