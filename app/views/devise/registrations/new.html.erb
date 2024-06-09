@@ -1,5 +1,16 @@
-<h2>Sign up</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
+    <h2>Sign up</h2>
 
+<% if @user.errors.any? %>
+  <h2><%= @user.errors.count %>errors prohibited this user from being saved:</h2>
+     <ul>
+       <% @user.errors.full_messages.each do |message| %>
+         <li><%= message %></li>
+         <% end %>
+     </ul>
+    <% end %>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :name %>
@@ -30,3 +41,7 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+   </div>
+  </div>
+</div>
+
