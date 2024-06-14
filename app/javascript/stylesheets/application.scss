@@ -9,9 +9,21 @@ body{
 }
 
 .container{
-  margin-left:auto;
+  margin-left: auto;
 }
 
 .row{
   display: flex;
 }
+
+.col-md-8{
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.offset-md-1{
+  margin-left: 8.3%;
+}
+  

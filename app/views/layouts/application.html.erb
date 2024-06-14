@@ -15,7 +15,7 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
            <span>
-             <%= link_to root_path, class: 'nav-link text-lite' do %>bookers
+             <%= link_to root_path, class: 'nav-link text-lite' do %>Bookers
               <% end %>
             </span>
 
@@ -28,7 +28,7 @@
               <% if user_signed_in? %>
 
                <li class="nav-item">
-                 <%= link_to user_path(@user, class: 'nav-link text-lite' do %>
+                 <%= link_to user_path(current_user.id), class: 'nav-link text-lite' do %>
                     <i class="fa-solid fa-house"></i>Home
                   <% end %>
                </li>
